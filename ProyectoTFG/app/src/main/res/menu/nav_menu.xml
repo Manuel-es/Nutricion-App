@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_reset"
+            android:icon="@android:drawable/ic_menu_rotate"
+            android:title="🔄 Reiniciar el Día" />
+        <item
+            android:id="@+id/nav_recetas"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="🍲 Recetas Recomendadas" />
+        <item
+            android:id="@+id/nav_ejercicios"
+            android:icon="@android:drawable/ic_menu_compass"
+            android:title="🏋️‍♂️ Rutina Diaria" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@android:drawable/ic_lock_power_off"
+            android:title="🚪 Cerrar Sesión" />
+    </group>
+</menu>
