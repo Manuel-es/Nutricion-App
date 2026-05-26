@@ -1,6 +1,7 @@
 package com.example.proyectotfg.activity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +25,8 @@ public class Login extends AppCompatActivity {
     private Button btnLogin;
     private Button btnIrRegistro;
 
+    private MediaPlayer mpClic;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,18 +41,22 @@ public class Login extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         btnIrRegistro = findViewById(R.id.btnIrRegistro);
 
+        mpClic = MediaPlayer.create(this, R.raw.click);
+
         btnIrRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                reproducirSonido();
                 Intent intent = new Intent(Login.this, Registro.class);
                 startActivity(intent);
             }
         });
 
-        // Lógica de inicio de sesión
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                reproducirSonido();
+
                 String correo = loginCorreo.getText().toString().trim();
                 String contra = loginContra.getText().toString().trim();
 
@@ -72,6 +79,20 @@ public class Login extends AppCompatActivity {
                         });
             }
         });
+    }
+
+    private void reproducirSonido() {
+        if (mpClic != null) {
+            if (mpClic.isPlaying()) {
+                mpClic.stop();
+                try {
+                    mpClic.prepare();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            mpClic.start();
+        }
     }
 
     private void verificarPerfilUsuario() {
@@ -101,5 +122,14 @@ public class Login extends AppCompatActivity {
                     startActivity(new Intent(Login.this, MainActivity.class));
                     finish();
                 });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mpClic != null) {
+            mpClic.release();
+            mpClic = null;
+        }
     }
 }

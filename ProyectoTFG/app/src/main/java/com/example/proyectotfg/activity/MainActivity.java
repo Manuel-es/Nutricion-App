@@ -176,8 +176,12 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         if (sensorManager != null && sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER) != null) {
             stepSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
             isSensorPresent = true;
+            tvPasos.setText("👣 Pasos hoy: 0");
         } else {
-            tvPasos.setText("👣 Podómetro: No disponible en emulador");
+            // TRUCO TEMPORAL PARA EL EMULADOR: Forzamos a que intente escuchar de todas formas
+            stepSensor = sensorManager != null ? sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER) : null;
+            isSensorPresent = true;
+            tvPasos.setText("👣 Esperando señal del podómetro...");
         }
     }
 
@@ -331,12 +335,17 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     protected void onResume() {
         super.onResume();
-        if (isSensorPresent && sensorManager != null) sensorManager.registerListener(this, stepSensor, SensorManager.SENSOR_DELAY_UI);
+        // Al forzar isSensorPresent a true, el emulador SÍ se suscribirá al evento de hardware
+        if (isSensorPresent && sensorManager != null && stepSensor != null) {
+            sensorManager.registerListener(this, stepSensor, SensorManager.SENSOR_DELAY_UI);
+        }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        if (isSensorPresent && sensorManager != null) sensorManager.unregisterListener(this);
+        if (isSensorPresent && sensorManager != null && stepSensor != null) {
+            sensorManager.unregisterListener(this);
+        }
     }
 }

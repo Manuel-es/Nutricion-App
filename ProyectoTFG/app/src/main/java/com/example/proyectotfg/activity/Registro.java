@@ -1,6 +1,7 @@
 package com.example.proyectotfg.activity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,8 +21,10 @@ public class Registro extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private EditText correousu, contrausu, confirmcontra;
-    private CheckBox cbEsNutricionista; // NUEVA VISTA: Selector de rol
+    private CheckBox cbEsNutricionista;
     private Button btnGuardar;
+
+    private MediaPlayer mpClic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,14 +34,18 @@ public class Registro extends AppCompatActivity {
         correousu = findViewById(R.id.correo);
         contrausu = findViewById(R.id.contraseña);
         confirmcontra = findViewById(R.id.confirma);
-        cbEsNutricionista = findViewById(R.id.cbEsNutricionista); // Vinculamos la casilla de verificación
+        cbEsNutricionista = findViewById(R.id.cbEsNutricionista);
         btnGuardar = findViewById(R.id.Guardar);
 
         mAuth = FirebaseAuth.getInstance();
 
+        mpClic = MediaPlayer.create(this, R.raw.click);
+
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                reproducirSonido();
+
                 String correo = correousu.getText().toString().trim();
                 String contra = contrausu.getText().toString().trim();
                 String confirm = confirmcontra.getText().toString().trim();
@@ -82,5 +89,28 @@ public class Registro extends AppCompatActivity {
                         });
             }
         });
+    }
+
+    private void reproducirSonido() {
+        if (mpClic != null) {
+            if (mpClic.isPlaying()) {
+                mpClic.stop();
+                try {
+                    mpClic.prepare();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            mpClic.start();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mpClic != null) {
+            mpClic.release();
+            mpClic = null;
+        }
     }
 }

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Nutrition-App</string>
+    <string name="txt_bienvenida">Welcome to Nutrición-App</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_registro">Sign Up</string>
+    <string name="hint_correo">Email Address</string>
+    <string name="hint_password">Password</string>
+
+    <string name="rol_paciente">Patient Dashboard</string>
+    <string name="rol_nutricionista">Nutritionist Panel</string>
+
+    <string name="txt_calorias_diarias">Daily Calories</string>
+    <string name="txt_pasos">Steps</string>
+    <string name="btn_escanear">Scan Product</string>
+    <string name="btn_buscar">Search Food</string>
+    <string name="txt_progreso">Your Daily Progress</string>
+
+    <string name="titulo_perfil">Profile Configuration</string>
+    <string name="hint_peso">Weight (kg)</string>
+    <string name="hint_altura">Height (cm)</string>
+    <string name="hint_edad">Age</string>
+    <string name="btn_calcular">Calculate Macros</string>
+
+    <string name="error_vacio">Please, fill in all the fields</string>
+    <string name="error_no_encontrado">Product not found</string>
+    <string name="error_correo">Invalid email format</string>
+
+    <string-array name="lista_objetivos">
+        <item>Lose Weight (Caloric Deficit)</item>
+        <item>Maintain Weight</item>
+        <item>Gain Muscle Mass (Surplus)</item>
+    </string-array>
+
+    <string-array name="lista_actividad">
+        <item>Sedentary (Little or no exercise)</item>
+        <item>Light (Exercise 1-3 days/week)</item>
+        <item>Moderate (Exercise 3-5 days/week)</item>
+        <item>Intense (Exercise 6-7 days/week)</item>
+    </string-array>
+</resources>

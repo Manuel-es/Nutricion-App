@@ -1,45 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ProyectoTFG</string>
+    <string name="app_name">Nutrición-App</string>
+    <string name="txt_bienvenida">Bienvenido a Nutrición-App</string>
+    <string name="btn_login">Iniciar Sesión</string>
+    <string name="btn_registro">Registrarse</string>
+    <string name="hint_correo">Correo Electrónico</string>
+    <string name="hint_password">Contraseña</string>
+
+    <string name="rol_paciente">Panel del Paciente</string>
+    <string name="rol_nutricionista">Panel del Nutricionista</string>
+
+    <string name="txt_calorias_diarias">Calorías Diarias</string>
+    <string name="txt_pasos">Pasos</string>
+    <string name="btn_escanear">Escanear Producto</string>
+    <string name="btn_buscar">Buscar Alimento</string>
+    <string name="txt_progreso">Tu Progreso Diario</string>
+
+    <string name="titulo_perfil">Configuración del Perfil</string>
+    <string name="hint_peso">Peso (kg)</string>
+    <string name="hint_altura">Altura (cm)</string>
+    <string name="hint_edad">Edad</string>
+    <string name="btn_calcular">Calcular Macros</string>
+
+    <string name="error_vacio">Por favor, rellena todos los campos</string>
+    <string name="error_no_encontrado">Producto no encontrado</string>
+    <string name="error_correo">Formato de correo no válido</string>
 
     <string-array name="lista_objetivos">
-        <item>Mantener peso</item>
-        <item>Perder peso</item>
-        <item>Ganar masa muscular</item>
+        <item>Perder Peso (Déficit Calórico)</item>
+        <item>Mantener Peso</item>
+        <item>Ganar Masa Muscular (Superávit)</item>
     </string-array>
+
     <string-array name="lista_actividad">
         <item>Sedentario (Poco o ningún ejercicio)</item>
         <item>Ligero (Ejercicio 1-3 días/semana)</item>
         <item>Moderado (Ejercicio 3-5 días/semana)</item>
-        <item>Fuerte (Ejercicio 6-7 días/semana)</item>
+        <item>Intenso (Ejercicio 6-7 días/semana)</item>
     </string-array>
-
-    <string name="alert_campos_obligatorios">Todos los campos son obligatorios</string>
-    <string name="alert_error_conexion">❌ Error de conexión con el servidor</string>
-    <string name="alert_perfil_guardado">✅ ¡Perfil guardado con éxito!</string>
-    <string name="alert_sesion_cerrada">🚪 Sesión cerrada correctamente</string>
-    <string name="alert_buscando_nutrientes">Buscando nutrientes...</string>
-    <string name="alert_alimento_no_encontrado">❌ Alimento no encontrado</string>
-
-    <string name="menu_reset">Reiniciar Progreso Diario</string>
-    <string name="menu_recetas">Planes Nutricionales</string>
-    <string name="menu_ejercicios">Entrenamiento Automatizado</string>
-    <string name="menu_logout">Cerrar Sesión</string>
-
-    <string name="dash_saludo">¡Hola, %1$s!</string>
-    <string name="dash_calorias_restantes">Restan: %1$d / %2$d kcal</string>
-    <string name="dash_pasos_emulador">👣 Podómetro: No disponible en emulador</string>
-    <string name="dash_pasos_real">👣 Pasos hoy: %1$d</string>
-    <string name="dash_proteinas">Prot:\n%1$dg / %2$dg</string>
-    <string name="dash_carbos">Carb:\n%1$dg / %2$dg</string>
-    <string name="dash_grasas">Gras:\n%1$dg / %2$dg</string>
-    <string name="dash_btn_buscar">Buscar</string>
-
-    <string name="train_titulo_tarjeta">Sugerencia Nutricional Post-Entreno</string>
-    <string name="train_descanso_titulo">💤 Día de Descanso</string>
-    <string name="train_descanso_desc">Hoy no hay rutinas de fuerza asignadas. Aprovecha el día de hoy para recuperar tus fibras musculares.</string>
-    <string name="train_descanso_post">🥗 Día de descanso activo. Prioriza comidas limpias y mantente hidratado.</string>
-
-    <string name="nutri_panel_titulo">Panel Profesional: Nutricionista</string>
-    <string name="nutri_subtitulo">Pulsa sobre un usuario para supervisar su estado actual</string>
-    <string name="nutri_formato_lista">👤 %1$s (%2$s)\n✉️ %3$s</string>
 </resources>
